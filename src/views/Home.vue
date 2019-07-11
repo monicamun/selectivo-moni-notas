@@ -1,18 +1,20 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <login v-if="!showNotes" v-on:login="showNotes = true"/>
+    <notes v-if="showNotes"/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import Login from "@/components/Login";
+import Notes from "@/components/Notes";
 export default {
   name: "home",
-  components: {
-    HelloWorld
+  components: { Login, Notes },
+  data() {
+    return {
+      showNotes: false,
+    };
   }
 };
 </script>

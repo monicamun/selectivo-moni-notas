@@ -1,10 +1,25 @@
 <template>
   <div id="app">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a href="sass.html">Sass</a>
+          </li>
+          <li>
+            <a href="badges.html">Components</a>
+          </li>
+          <li>
+            <a href="collapsible.html">JavaScript</a>
+          </li>
+        </ul> -->
+      </div>
+    </nav>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/"></router-link>
     </div>
-    <router-view />
+    <router-view/>
   </div>
 </template>
 
@@ -22,7 +37,7 @@
     font-weight: bold;
     color: #2c3e50;
     &.router-link-exact-active {
-      color: #42b983;
+      color: #bb3a1a;
     }
   }
 }

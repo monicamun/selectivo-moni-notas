@@ -12,7 +12,12 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0-rc.24",
     "core-js": "^2.6.5",
+    "express": "^4.17.1",
+    "firebase": "^6.2.4",
+    "materialize-css": "^1.0.0-rc.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
@@ -41,7 +46,9 @@
       "plugin:vue/essential",
       "@vue/prettier"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
