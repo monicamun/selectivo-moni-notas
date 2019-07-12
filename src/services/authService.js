@@ -1,3 +1,3 @@
-import Vue from 'vue';
-import firebase from '@/services/firebaseConfig';
-import 'firebase/auth';
+import Vue from "vue";
+import firebase from "firebase";
+import "firebase/auth";

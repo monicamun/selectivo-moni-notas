@@ -1,20 +1,27 @@
 <template>
-  <div class="home">
-    <login v-if="!showNotes" v-on:login="showNotes = true"/>
-    <notes v-if="showNotes"/>
+  <div class="container home">
+    <login v-if="!isUserLoggedIn" />
+    <notes v-if="isUserLoggedIn" />
   </div>
 </template>
 
 <script>
 import Login from "@/components/Login";
 import Notes from "@/components/Notes";
+import firebase from "firebase";
+import "firebase/auth";
 export default {
   name: "home",
   components: { Login, Notes },
   data() {
     return {
-      showNotes: false,
+      isUserLoggedIn: false
     };
+  },
+  beforeCreate() {
+    firebase.auth().onAuthStateChanged(user => {
+      this.isUserLoggedIn = !!user;
+    });
   }
 };
 </script>

@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import firebase from "@/services/firebaseConfig";
+import firebase from "firebase";
 import "firebase/auth";
 
 export default {
@@ -53,8 +53,7 @@ export default {
       },
       show: true,
       error: null,
-      idToken:null,
-    
+      idToken: null
     };
   },
   computed: {
@@ -84,12 +83,10 @@ export default {
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(() => {
           this.$emit("login");
-          this.getIdToken()
         })
         .catch(error => {
           this.error = error;
         });
-
     },
     signUp() {
       firebase
@@ -105,10 +102,9 @@ export default {
     getIdToken() {
       firebase
         .auth()
-        .currentUser.getIdToken(/* forceRefresh */ true)
-        .then((idToken) => {
+        .currentUser.getIdToken(/* forceRefresh */ false)
+        .then(idToken => {
           // Send token to your backend via HTTPS
-          console.log(idToken)
           this.idToken = idToken;
         })
         .catch(function(error) {
