@@ -23,9 +23,6 @@ const notesService = new Vue({
             });
           })
           .then(response => {
-            console.log("notes loaded");
-            console.log(response.data);
-
             this.notes = response.data;
             this.$emit("notesLoaded", this.notes);
           })
@@ -62,7 +59,8 @@ const notesService = new Vue({
         })
         .then(() => {
           this.reloadNotes();
-        }).catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
     }
   }
 });

@@ -52,8 +52,7 @@ export default {
         password: ""
       },
       show: true,
-      error: null,
-      idToken: null
+      error: null
     };
   },
   computed: {
@@ -94,18 +93,6 @@ export default {
         .createUserWithEmailAndPassword(this.form.email, this.form.password)
         .then(() => {
           this.$emit("login");
-        })
-        .catch(function(error) {
-          this.error = error;
-        });
-    },
-    getIdToken() {
-      firebase
-        .auth()
-        .currentUser.getIdToken(/* forceRefresh */ false)
-        .then(idToken => {
-          // Send token to your backend via HTTPS
-          this.idToken = idToken;
         })
         .catch(function(error) {
           this.error = error;

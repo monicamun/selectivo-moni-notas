@@ -4,7 +4,7 @@
       <div class="nav-wrapper">
         <div class="row">
           <div class="col m11">
-            <a href="#" class="brand-logo">Logo</a>
+            <a href="#" class="brand-logo">Notes</a>
           </div>
           <div class="col m1">
             <button v-if="isUserLoggedIn" v-on:click="logout">Logout</button>
